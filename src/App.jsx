@@ -15,10 +15,8 @@ function App() {
   }
 
   useEffect(() => {
-    const pacientesLocalStorage = localStorage.getItem("pacientes") ?? [];
-    if (pacientesLocalStorage) {
-      setPacientes(JSON.parse(pacientesLocalStorage));
-    }
+    const pacientesLocalStorage = JSON.parse(localStorage.getItem("pacientes") ?? []);
+    setPacientes(pacientesLocalStorage);
   }, []);
 
   useEffect(() => {
